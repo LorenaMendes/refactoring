@@ -19,17 +19,4 @@ public class HtmlStatement extends Statement {
         String.valueOf(aCustomer.getTotalFrequentRenterPoints()) +
         "</EM> frequent renter points<P>");
     }
-    
-    public String value(Customer aCustomer) {
-        Enumeration rentals = aCustomer.getRentals();
-        String result = this.RentalHeader(aCustomer);
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
-            //show figures for each rental
-            result += this.RentalFigures(each);
-        }
-        //add footer lines
-        result += this.RentalFooter(aCustomer);
-        return result;
-    }
 }
